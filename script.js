@@ -141,27 +141,6 @@ shuffleWords.addEventListener('click', function () {
     renderCard(cards[indexCard]);
 });
 
-//сложно и повторяется 1ое слово, если перемешать слова
-// shuffleWords.addEventListener('click', function () {
-//     const randomNumber = generateRandomValue(1, 4);
-
-//     switch (randomNumber) {
-//         case 1:
-//             const sortCards1 = cards.sort((a, b) => customSort(b.backRus, a.backRus));
-//             renderCard(sortCards1[indexCard]);
-//             break;
-//         case 2:
-//             const sortCards2 = cards.sort((a, b) => customSort(b.frontEn, a.frontEn));
-//             renderCard(sortCards2[indexCard]);
-//             break;
-//         case 3:
-//             const sortCards3 = cards.sort((a, b) => customSort(a.frontEn, b.frontEn));
-//             renderCard(sortCards3[indexCard]);
-//             break;
-//     }
-//     console.log(cards);
-// });
-
 let selectedCard = null;
 function renderExamCards(arr) {
     myProgress = 0;
@@ -298,20 +277,20 @@ function makeSuccess(el) {
     }
 }
 
-// function runTimer() {
-//     const timeExam = time.textContent.split(':');
-//     let minutes = +timeExam[0];
-//     let seconds = +timeExam[1];
-//     if (seconds <= 59) {
-//         seconds++;
-//     } else {
-//         minutes++;
-//         seconds = 0;
-//     }
-//     if (minutes >= 0 && seconds >= 0) {
-//         time.textContent = `${format(minutes)}:${format(seconds)}`
-//     }
-// }
+function runTimer() {
+    const timeExam = time.textContent.split(':');
+    let minutes = +timeExam[0];
+    let seconds = +timeExam[1];
+    if (seconds <= 59) {
+        seconds++;
+    } else {
+        minutes++;
+        seconds = 0;
+    }
+    if (minutes >= 0 && seconds >= 0) {
+        time.textContent = `${format(minutes)}:${format(seconds)}`
+    }
+}
 
 function format(value) {
     if (value < 10) {
